@@ -27,9 +27,11 @@
 
   # 推荐 GNOME 应用
   environment.systemPackages = with pkgs; [
-    gnome.gnome-terminal
+    gnome-console
     gnome.nautilus
+    gnome-text-editor
     gnome.gnome-tweaks
+    gnome.gnome-shell-extensions
     gnome.gnome-system-monitor
     gnome.gnome-disk-utility
     gnome.gnome-font-viewer
