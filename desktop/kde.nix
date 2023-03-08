@@ -42,10 +42,10 @@
 
   # Fcitx5 输入法，推荐 KDE Plasma 使用
   i18n.inputMethod = {
-  enabled = "fcitx5";
-  fcitx5.addons = with pkgs; [
-    fcitx5-chinese-addons # 中文输入法
-  ];
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-chinese-addons # 中文输入法
+    ];
   };
 
   # -------------------- 输入法 --------------------

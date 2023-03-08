@@ -47,10 +47,10 @@
 
   # Ibus 输入法，推荐 GNOME 使用
   i18n.inputMethod = {
-  enabled = "ibus";
-  ibus.engines = with pkgs.ibus-engines; [
-    libpinyin # 中文输入法
-  ];
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin # 中文输入法
+    ];
   };
 
   # -------------------- 输入法 --------------------
