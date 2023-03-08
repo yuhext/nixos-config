@@ -15,7 +15,7 @@ NixOS 基础配置文件，包含各种桌面环境
 
 ## 注意事项
 
-具体安装步骤参考 [官方教程](https://nixos.org/manual/nixos/stable/index.html#nixos-manual)，下面只说明使用此仓库配置需要注意的点
+具体安装步骤可以参考 [官方教程](https://nixos.org/manual/nixos/stable/index.html#nixos-manual) 和 [我的博客](https://blog.csdn.net/yuhext/article/details/129349895)，下面只说明使用此仓库配置需要注意的点
 
 ### EFI 系统分区
 
@@ -36,9 +36,20 @@ EFI 系统分区 (ESP) 挂载点为 `/efi` (对应配置文件中的 `efiSysMoun
 
 所有配置位于 `/mnt/etc/nixos` 目录下 (`/mnt` 挂载根目录)，不要更改 `handware-configuration.nix` (硬件配置) 中的内容，这是根据你的机器自己生成的，其中内容可以由其他配置文件覆盖
 
-### 镜像源
+### 软件源
 
-在国内，NixOS 软件包的官方仓库 `https://cache.nixos.org` 速度较慢，安装时最好使用镜像源
+NixOS 的软件源 `https://cache.nixos.org` 在国内无法访问，所以在安装时需要设置代理：
+
+```bash
+# 设置代理
+export http_proxy="socks://192.168.2.165:10810"
+export https_proxy="socks://192.168.2.165:10810"
+
+# 安装系统
+nixos-install
+```
+
+也可以使用镜像源安装，但是有概率会安装失败
 
 ```bash
 # 使用北京外国语大学的镜像源
